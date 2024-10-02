@@ -51,7 +51,7 @@ app.get('', (req, res) => {
 
 // Question 3: Filter patients by first name
 app.get('', (req, res) => {
-    const getPatientsByFirstName = "SELECT first_name FROM patients"; // SQL query with WHERE clause
+    const getPatientsByFirstName = "SELECT first_name FROM patients";
 
     db.query(getPatientsByFirstName, (err, data) => {
         if (err) {
