@@ -26,7 +26,7 @@ db.connect((err) => {
 });
 
 // Question 1: Retrieve all patients
-app.get('', (req, res) => {
+app.get('/patients', (req, res) => {
     const getPatients = "SELECT patient_id, first_name, last_name, date_of_birth FROM patients";
     db.query(getPatients, (err, data) => {
         // If there is an error
@@ -38,7 +38,7 @@ app.get('', (req, res) => {
 });
 
 // Question 2: Retrieve all providers
-app.get('', (req, res) => {
+app.get('/providers', (req, res) => {
     const getProviders = "SELECT first_name, last_name, provider_specialty FROM providers";
     db.query(getProviders, (err, data) => {
         // If there is an error
@@ -50,7 +50,7 @@ app.get('', (req, res) => {
 });
 
 // Question 3: Filter patients by first name
-app.get('', (req, res) => {
+app.get('/get-firstnamepatients', (req, res) => {
     const getPatientsByFirstName = "SELECT first_name FROM patients";
 
     db.query(getPatientsByFirstName, (err, data) => {
@@ -62,7 +62,7 @@ app.get('', (req, res) => {
 });
 
 // Question 4: Retrieve providers by specialty
-app.get('', (req, res) => {
+app.get('/providers-specialty', (req, res) => {
     const getProvidersBySpecialty = "SELECT provider_specialty FROM providers";
 
     db.query(getProvidersBySpecialty, (err, data) => {
